@@ -34,7 +34,7 @@ mixin PhaseManagement on StatefulWidget {
   }
 
   void switchPhase(ShowerSession session) {
-    isHotPhase = !isHotPhase;
+    session.isHotPhase = !session.isHotPhase;
     session.phasesCompleted++;
     updatePhase(session);
   }
@@ -85,13 +85,16 @@ class ShowerSession {
       : preferences.coldWaterDuration;
   
   bool get isHotPhase => _hotPhase;
+  set isHotPhase(bool value) {
+    _hotPhase = value;
+  }
 }
 
 class SessionScreen extends StatefulWidget with PhaseManagement {
   final UserPreferences preferences;
   final List<ShowerSessionForHistory> sessions;
 
-  SessionScreen({required this.preferences, required this.sessions});
+  SessionScreen({super.key, required this.preferences, required this.sessions});
 
   @override
   _SessionScreenState createState() => _SessionScreenState();

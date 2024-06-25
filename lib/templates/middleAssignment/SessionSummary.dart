@@ -6,7 +6,7 @@ class SessionSummary extends StatefulWidget {
   final ShowerSessionForHistory session;
   final List<ShowerSessionForHistory> sessions;
 
-  SessionSummary({required this.session, required this.sessions});
+  const SessionSummary({required this.session, required this.sessions});
 
   @override
   _SessionSummaryState createState() => _SessionSummaryState();
@@ -19,7 +19,7 @@ class _SessionSummaryState extends State<SessionSummary> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Session Summary'),
+        title: const Text('Session Summary'),
       ),
       body: Center(
         child: Column(
@@ -57,7 +57,7 @@ class _SessionSummaryState extends State<SessionSummary> {
                   ),
                 );
               },
-              child: Text('Back to home page', style: TextStyle(color: Colors.amber)),
+              child: const Text('Back to home page', style: TextStyle(color: Colors.amber)),
             ),
           ],
         ),

@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
 class HomeScreen extends StatefulWidget {
   final List<ShowerSessionForHistory> sessions;
 
-  HomeScreen({required this.sessions});
+  const HomeScreen({super.key, required this.sessions});
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
